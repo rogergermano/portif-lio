@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roger Germano de Jesus — Portfólio Gerencial</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a18;
+    --ink-mid: #3d3d3a;
+    --ink-muted: #7a7a72;
+    --ink-faint: #b8b8b0;
+    --paper: #f7f5f0;
+    --paper-warm: #ede9e0;
+    --paper-card: #ffffff;
+    --accent: #1a3a2a;
+    --accent-mid: #2d6147;
+    --accent-light: #e8f2ec;
+    --accent-bright: #3d8b5e;
+    --amber: #c47c1a;
+    --amber-light: #fdf3e3;
+    --red-soft: #c04040;
+    --red-light: #fdeaea;
+    --border: rgba(26,26,24,0.10);
+    --border-mid: rgba(26,26,24,0.18);
+    --shadow: 0 2px 16px rgba(26,26,24,0.08);
+    --shadow-card: 0 4px 24px rgba(26,26,24,0.10);
+    --radius: 10px;
+    --radius-lg: 16px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── HEADER ── */
+  .hero {
+    background: var(--accent);
+    color: #fff;
+    padding: 72px 48px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 54px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .hero-subtitle {
+    font-size: 17px;
+    color: rgba(255,255,255,0.70);
+    font-weight: 300;
+    margin-bottom: 36px;
+    max-width: 560px;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .hero-stat-label {
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 4px;
+  }
+  .hero-stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .hero-stat-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.50);
+  }
+
+  /* ── NAV ── */
+  .nav-bar {
+    background: var(--paper-card);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-bar-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: flex;
+    gap: 4px;
+  }
+  .nav-bar a {
+    display: inline-block;
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .nav-bar a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 860px; margin: 0 auto; padding: 0 48px 80px; }
+
+  .section { padding-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .section-number {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+  }
+  .card + .card { margin-top: 16px; }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 8px; bottom: 8px;
+    width: 1px;
+    background: var(--border-mid);
+  }
+  .timeline-item { position: relative; margin-bottom: 32px; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -24px; top: 6px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent-bright);
+    border: 2px solid var(--paper-card);
+    box-shadow: 0 0 0 1px var(--accent-bright);
+  }
+  .timeline-date {
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+  }
+  .timeline-doc {
+    font-size: 12px;
+    color: var(--accent-bright);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .timeline-title {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .timeline-body {
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  /* ── EVIDENCE GRID ── */
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .evidence-card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .evidence-icon {
+    width: 36px; height: 36px;
+    border-radius: var(--radius);
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    font-size: 17px;
+    color: var(--accent);
+  }
+  .evidence-label {
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+  }
+  .evidence-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .evidence-desc {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.5;
+  }
+
+  /* ── COMPARISON TABLE ── */
+  .comparison-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  table.comparison {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--paper-card);
+    font-size: 14px;
+  }
+  table.comparison thead th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    background: var(--paper-warm);
+    border-bottom: 1px solid var(--border);
+    font-weight: 500;
+  }
+  table.comparison thead th:first-child { border-radius: var(--radius-lg) 0 0 0; }
+  table.comparison thead th:last-child { border-radius: 0 var(--radius-lg) 0 0; }
+  table.comparison tbody tr { border-bottom: 1px solid var(--border); }
+  table.comparison tbody tr:last-child { border-bottom: none; }
+  table.comparison tbody td {
+    padding: 14px 20px;
+    vertical-align: top;
+    color: var(--ink-mid);
+  }
+  table.comparison tbody td:first-child {
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .badge-ok {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background: #eaf5ee;
+    color: #1a6e3a;
+  }
+  .badge-fail {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background: var(--red-light);
+    color: var(--red-soft);
+  }
+  .badge-partial {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background: var(--amber-light);
+    color: var(--amber);
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .skill-block {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+  }
+  .skill-category {
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .skill-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--ink-mid);
+    margin-bottom: 8px;
+  }
+  .skill-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent-bright);
+    flex-shrink: 0;
+  }
+
+  /* ── DOCUMENT CARDS ── */
+  .doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .doc-card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .doc-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .doc-type {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    padding: 3px 8px;
+    border-radius: 20px;
+    border: 1px solid var(--border-mid);
+    white-space: nowrap;
+  }
+  .doc-date {
+    font-size: 12px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .doc-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .doc-body {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.5;
+  }
+
+  /* ── NARRATIVE SECTION ── */
+  .narrative {
+    background: var(--accent);
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: 36px 40px;
+    margin-top: 8px;
+  }
+  .narrative p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 18px;
+  }
+  .narrative p:last-child { margin-bottom: 0; }
+  .narrative strong { color: #fff; font-weight: 500; }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .footer-role {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-bottom: 20px;
+  }
+  .footer-contacts {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-contact {
+    font-size: 14px;
+    color: var(--accent-bright);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .footer-contact:hover { text-decoration: underline; }
+
+  /* ── DIVIDER ── */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+  /* ── QUOTE BLOCK ── */
+  .quote-block {
+    border-left: 3px solid var(--accent-bright);
+    padding: 16px 24px;
+    background: var(--accent-light);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 24px 0;
+  }
+  .quote-block p {
+    font-size: 14px;
+    color: var(--accent);
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .quote-source {
+    font-size: 12px;
+    color: var(--accent-bright);
+    margin-top: 6px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 48px 24px 40px; }
+    .page { padding: 0 24px 60px; }
+    .nav-bar-inner { padding: 0 16px; overflow-x: auto; }
+    .hero-stats { gap: 24px; }
+    .footer { padding: 32px 24px; }
+  }
+
+  @media print {
+    .nav-bar { display: none; }
+    .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .narrative { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">Portfólio Gerencial · 2026</span>
+    <h1>Roger Germano<br>de Jesus</h1>
+    <p class="hero-subtitle">Gerente Comercial &amp; Analista de Dados — Varejo de Materiais de Construção. Liderança orientada a dados, diagnóstico financeiro e automação de processos.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-label">Crescimento entregue</div>
+        <div class="hero-stat-value">+15,3%</div>
+        <div class="hero-stat-sub">faturamento YoY (1º quadrimestre)</div>
+      </div>
+      <div>
+        <div class="hero-stat-label">Receita mapeada</div>
+        <div class="hero-stat-value">R$550k</div>
+        <div class="hero-stat-sub">orçamentos reprimidos identificados</div>
+      </div>
+      <div>
+        <div class="hero-stat-label">Potencial gerado</div>
+        <div class="hero-stat-value">R$290k</div>
+        <div class="hero-stat-sub">margem adicional/ano projetada</div>
+      </div>
+      <div>
+        <div class="hero-stat-label">Documentos produzidos</div>
+        <div class="hero-stat-value">14+</div>
+        <div class="hero-stat-sub">relatórios, propostas e specs técnicas</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav-bar" aria-label="Seções do portfólio">
+  <div class="nav-bar-inner">
+    <a href="#sobre">Sobre</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#timeline">Linha do tempo</a>
+    <a href="#evidencias">Evidências</a>
+    <a href="#documentos">Documentos</a>
+    <a href="#competencias">Competências</a>
+    <a href="#narrativa">Narrativa</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <!-- SOBRE -->
+  <section class="section" id="sobre">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Perfil profissional</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="card">
+      <p style="font-size:16px; color:var(--ink-mid); line-height:1.75; margin-bottom:20px;">
+        Profissional com sólida experiência em <strong>gestão comercial de varejo</strong> e crescente atuação como <strong>analista de dados</strong>. Ao assumir a gerência comercial da Comercial Avenida (Rede Construir) em fevereiro de 2026, entregou diagnóstico financeiro completo na segunda semana de gestão, implantou governança de indicadores do zero e gerou crescimento consistente de dois dígitos no faturamento — enquanto construía, em paralelo, infraestrutura própria de dados em Python e SQL que a empresa não possuía.
+      </p>
+      <p style="font-size:16px; color:var(--ink-mid); line-height:1.75;">
+        Formação em andamento em Análise de Dados pela EBAC, com foco em Python, SQL/MySQL e Machine Learning. Atua na interseção entre <strong>liderança comercial sênior</strong> e <strong>ciência de dados aplicada</strong> — perfil raro em mercados de varejo regional.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section class="section" id="resultados">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Resultados mensuráveis</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="evidence-grid">
+      <div class="evidence-card">
+        <div class="evidence-icon">📈</div>
+        <div class="evidence-label">Faturamento quadrimestral</div>
+        <div class="evidence-value">+15,3%</div>
+        <div class="evidence-desc">R$467.931 adicionais vs. mesmo período de 2025. Crescimento sustentado nos 4 meses consecutivos.</div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon">🎯</div>
+        <div class="evidence-label">Ticket médio</div>
+        <div class="evidence-value">+16,9%</div>
+        <div class="evidence-desc">De R$181,94 (jan/26) para R$212,81 (abr/26). Vendendo menos notas, faturando mais por venda.</div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon">💰</div>
+        <div class="evidence-label">Eficiência de CMV</div>
+        <div class="evidence-value">−4 p.p.</div>
+        <div class="evidence-desc">CMV caiu de 60,59% para 56,55% no quadrimestre — equivalente a R$32.000 extras/mês sem vender a mais.</div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon">🚛</div>
+        <div class="evidence-label">Receita de frete</div>
+        <div class="evidence-value">+65%</div>
+        <div class="evidence-desc">De R$3.174 (abr/25) para R$5.241 (abr/26) após implantação de política obrigatória de cobrança.</div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon">🔍</div>
+        <div class="evidence-label">Receita reprimida</div>
+        <div class="evidence-value">R$550k</div>
+        <div class="evidence-desc">Orçamentos abandonados identificados via auditoria SQL em maio/26. Dados homologados com 99,6% de precisão.</div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon">🤖</div>
+        <div class="evidence-label">Automação n8n</div>
+        <div class="evidence-value">R$0</div>
+        <div class="evidence-desc">Custo de implementação de CRM automático para recuperação de orçamentos. ROI de 17.975% no 1º mês.</div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon">📊</div>
+        <div class="evidence-label">Margem adicional projetada</div>
+        <div class="evidence-value">R$290k</div>
+        <div class="evidence-desc">Via estratégia de precificação ABC (cenário agressivo), identificada e modelada com dados reais do ERP.</div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon">✅</div>
+        <div class="evidence-label">Assertividade do pipeline</div>
+        <div class="evidence-value">99,86%</div>
+        <div class="evidence-desc">Diferença de apenas R$1.000 em universo de R$700k auditado. Pipeline Python homologado contra fechamento ERP.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section" id="timeline">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Linha do tempo de gestão</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="card">
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-date">Fevereiro · Semana 2</div>
+          <div class="timeline-doc">Documento 6</div>
+          <div class="timeline-title">Diagnóstico financeiro completo</div>
+          <div class="timeline-body">Na segunda semana de função, produziu análise de MARKUP, CMV e despesas fixas dos últimos 3 anos. Identificou margem líquida real de ~2%, ponto de equilíbrio de R$800k/mês e propôs 3 caminhos estruturais com metas numéricas para 12 meses.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Fevereiro · 22</div>
+          <div class="timeline-doc">Documento 5</div>
+          <div class="timeline-title">Proposta de melhoria de atendimento</div>
+          <div class="timeline-body">Comunicado formal à equipe com diagnóstico de causas de baixo faturamento, 4 pilares de melhoria e metodologia de funil de orçamentos com retorno obrigatório e pós-venda estruturado.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Fevereiro · 23</div>
+          <div class="timeline-doc">Documento 9</div>
+          <div class="timeline-title">Regulamento Semana da Virada</div>
+          <div class="timeline-body">Política comercial interna com 9 cláusulas, limites de desconto por hierarquia, proteção de margem mínima por categoria e regras de negociação. Criado enquanto a diretoria ainda não havia formalizado nenhuma política de desconto.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Fevereiro · 25</div>
+          <div class="timeline-doc">Documento 10</div>
+          <div class="timeline-title">Ata de Reunião com equipe e diretoria</div>
+          <div class="timeline-body">Reunião conduzida com presença de Anderson (sócio), levantamento de preços vs. concorrência apresentado, 4 pilares deliberados coletivamente e plano prático de 7 dias com KPIs quantificados. Ata formal registrada.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Janeiro · 2026</div>
+          <div class="timeline-doc">Documento 4</div>
+          <div class="timeline-title">Planejamento estratégico de marketing anual</div>
+          <div class="timeline-body">Calendário de campanhas para os 12 meses com mote, mix de produtos, diretrizes digitais, regras de treinamento de equipe e antecipação de compras por campanha. Criado antes de qualquer cobrança da diretoria.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Março · 22</div>
+          <div class="timeline-doc">Documento 3</div>
+          <div class="timeline-title">Plano de Metas e Objetivos 2026</div>
+          <div class="timeline-body">Documento com metas por setor (Vendas, Compras, Financeiro/Diretoria), revisado mensalmente com avaliação honesta de resultados. Registrou sistematicamente o que foi e o que não foi executado por cada área.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Abril · 2026</div>
+          <div class="timeline-doc">Documentos 1, 11</div>
+          <div class="timeline-title">Reuniões mensais estruturadas com pautas completas</div>
+          <div class="timeline-body">Guia de Reunião e Pauta Comercial com análise de dados do mês anterior, novo modelo de comissionamento vinculado à saúde financeira, ferramentas de apoio e educação financeira da equipe de balcão.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Abril · 06</div>
+          <div class="timeline-doc">Documento 8</div>
+          <div class="timeline-title">Relatório de Performance Fev/Mar (YoY)</div>
+          <div class="timeline-body">Análise comparativa Ano-contra-Ano com metodologia própria, superando o que o ERP nativo oferecia. Crescimento de +12% no bimestre, 354 notas a menos porém R$86k a mais — produtividade comprovada em dados.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Maio · 09</div>
+          <div class="timeline-doc">Documento 2</div>
+          <div class="timeline-title">Relatório Executivo 1º Quadrimestre</div>
+          <div class="timeline-body">Consolidação dos 4 meses com indicadores comparativos, análise de CMV, política de fretes e projeção parcial de maio. Documento assinado formalmente, entregue à diretoria.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Maio · 14</div>
+          <div class="timeline-doc">Apresentação Slides</div>
+          <div class="timeline-title">Planejamento de Margens — Estratégia ABC</div>
+          <div class="timeline-body">Apresentação em slides para a diretoria (Anderson e Eva) com simulação de 3 cenários de recomposição de margem via precificação da Curva B/C — de +R$8k a +R$24k/mês de lucro bruto adicional.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Maio · 28</div>
+          <div class="timeline-doc">Documentos 7 e 13</div>
+          <div class="timeline-title">Projeto Resgate de Receita — Auditoria + CRM Automático</div>
+          <div class="timeline-body">Investigação SQL em 3 fases que identificou R$550.460,08 em orçamentos perdidos. Proposta formal entregue à Eva com arquitetura n8n, ROI calculado em 2 cenários e análise completa de riscos e mitigações.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Maio · 30</div>
+          <div class="timeline-doc">Documentos 12 e 14</div>
+          <div class="timeline-title">Pipeline Python + Dashboard de Performance</div>
+          <div class="timeline-body">Pipeline completo SQL → Python (PyCharm) entregando relatório PDF executivo e dashboard HTML interativo por vendedor, com Curva ABC, descontos, fretes e ticket médio individuais. Homologado com 99,86% de assertividade contra o ERP.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCIAS (DIRETORIA NÃO EXECUTOU) -->
+  <section class="section" id="evidencias">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title">Contexto: o que a diretoria não executou</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <p style="color:var(--ink-mid); margin-bottom:24px; font-size:15px;">
+      O portfólio abaixo documenta não apenas entregas, mas também o padrão sistemático de omissão das áreas que dependiam da diretoria para responder — registrado nas próprias avaliações mensais do Plano de Metas.
+    </p>
+
+    <div class="comparison-wrap">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Meta definida</th>
+            <th>Responsável</th>
+            <th>Status (mai/26)</th>
+            <th>Observação registrada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aumentar faturamento 10%</td>
+            <td>Comercial</td>
+            <td><span class="badge-ok">Entregue</span></td>
+            <td>+26,5% em abril, +14,5% em maio vs. ano anterior</td>
+          </tr>
+          <tr>
+            <td>Ticket médio mín. R$190</td>
+            <td>Comercial</td>
+            <td><span class="badge-ok">Entregue</span></td>
+            <td>R$212,81 em abr, R$211,35 em mai — estável</td>
+          </tr>
+          <tr>
+            <td>Aumentar frete cobrado</td>
+            <td>Comercial</td>
+            <td><span class="badge-ok">Entregue</span></td>
+            <td>Aumento significativo registrado em maio</td>
+          </tr>
+          <tr>
+            <td>Aumentar margem para 38,5%</td>
+            <td>Compras</td>
+            <td><span class="badge-fail">Não entregue</span></td>
+            <td>Margem fechou em 36,21% — abaixo da meta há 2 meses</td>
+          </tr>
+          <tr>
+            <td>Estabilizar markup em 60%</td>
+            <td>Compras</td>
+            <td><span class="badge-fail">Não entregue</span></td>
+            <td>Markup em 56,76% em maio — gap de 3,24 p.p.</td>
+          </tr>
+          <tr>
+            <td>Revisar mix de produtos</td>
+            <td>Compras</td>
+            <td><span class="badge-fail">Não entregue</span></td>
+            <td>"Pouca ou nenhuma alteração feita no mix"</td>
+          </tr>
+          <tr>
+            <td>Implantar estoque mínimo</td>
+            <td>Compras</td>
+            <td><span class="badge-fail">Não entregue</span></td>
+            <td>"Ainda não foi possível, mesmo diante de todas as ferramentas apresentadas"</td>
+          </tr>
+          <tr>
+            <td>Formalizar política de descontos</td>
+            <td>Diretoria</td>
+            <td><span class="badge-fail">Não entregue</span></td>
+            <td>Não houve formalização — controle feito informalmente pelo comercial</td>
+          </tr>
+          <tr>
+            <td>Gestão de marketing</td>
+            <td>Diretoria</td>
+            <td><span class="badge-fail">Não entregue</span></td>
+            <td>"Ainda não há gestão de marketing" — planejamento anual existia mas não foi executado</td>
+          </tr>
+          <tr>
+            <td>Treinamentos em maio</td>
+            <td>Diretoria</td>
+            <td><span class="badge-fail">Não entregue</span></td>
+            <td>"Não foram realizados treinamentos para o mês de maio"</td>
+          </tr>
+          <tr>
+            <td>Implementar CRM automático (n8n)</td>
+            <td>Diretoria</td>
+            <td><span class="badge-fail">Sem resposta</span></td>
+            <td>Proposta entregue em 28/mai com ROI 17.975% — sem registro de resposta</td>
+          </tr>
+          <tr>
+            <td>Redesenhar layout da loja</td>
+            <td>Diretoria</td>
+            <td><span class="badge-partial">Parcial</span></td>
+            <td>"Melhora em alguns setores com proposição da gestão comercial"</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quote-block" style="margin-top:24px;">
+      <p>"Ainda não foi possível estabelecer estoque mínimo, mesmo diante de todas as ferramentas apresentadas."</p>
+      <div class="quote-source">— Avaliação de Metas, maio de 2026 · Doc 3</div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTOS -->
+  <section class="section" id="documentos">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Documentos produzidos</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="doc-grid">
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Análise financeira</span>
+          <span class="doc-date">Fev/26</span>
+        </div>
+        <div class="doc-title">Análise MARKUP — Receita × Margem × Despesas</div>
+        <div class="doc-body">Diagnóstico completo da estrutura econômica da operação na 2ª semana de gestão. CMV, despesas fixas, ponto de equilíbrio e 3 caminhos estratégicos.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Gestão de pessoas</span>
+          <span class="doc-date">Fev/26</span>
+        </div>
+        <div class="doc-title">Proposta de Melhoria de Atendimento</div>
+        <div class="doc-body">Comunicado formal à equipe com diagnóstico, 4 pilares e metodologia de funil de orçamentos com retorno e pós-venda obrigatórios.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Política comercial</span>
+          <span class="doc-date">Fev/26</span>
+        </div>
+        <div class="doc-title">Regulamento — Semana da Virada</div>
+        <div class="doc-body">9 cláusulas com limites de desconto por hierarquia, proteção de margem por categoria e regras de negociação. "Preço é último recurso, não primeiro."</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Governança</span>
+          <span class="doc-date">Fev/26</span>
+        </div>
+        <div class="doc-title">Ata de Reunião — Equipe de Vendas</div>
+        <div class="doc-body">Reunião com diretoria presente, levantamento de concorrência, deliberações coletivas e plano de 7 dias com KPIs. Registro formal com data, participantes e responsável.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Planejamento</span>
+          <span class="doc-date">Jan/26</span>
+        </div>
+        <div class="doc-title">Planejamento Estratégico de Marketing 2026</div>
+        <div class="doc-body">Calendário anual de campanhas para 12 meses com mote, mix, diretrizes digitais e regras de antecipação de compras. Produzido proativamente.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Monitoramento</span>
+          <span class="doc-date">Mar–Mai/26</span>
+        </div>
+        <div class="doc-title">Metas e Objetivos 2026 (com 2 avaliações)</div>
+        <div class="doc-body">Plano de metas por setor revisado mensalmente com avaliação honesta. Evidência documental do que foi e não foi executado por cada área.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Relatório executivo</span>
+          <span class="doc-date">Abr/26</span>
+        </div>
+        <div class="doc-title">Performance Fev/Mar 2025 × 2026 (YoY)</div>
+        <div class="doc-body">Análise comparativa com metodologia própria. +12% bimestre, 354 notas a menos porém R$86k a mais — produtividade em dados.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Relatório executivo</span>
+          <span class="doc-date">Mai/26</span>
+        </div>
+        <div class="doc-title">Relatório Executivo 1º Quadrimestre 2026</div>
+        <div class="doc-body">+15,3% YoY no quadrimestre, evolução de CMV, política de fretes, ticket médio. Documento assinado e entregue formalmente à diretoria.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Proposta estratégica</span>
+          <span class="doc-date">Mai/26</span>
+        </div>
+        <div class="doc-title">Proposta — Suprimentos, Estoque Mínimo e Receita Reprimida</div>
+        <div class="doc-body">Proposta formal endereçada à diretoria com R$550k identificados, solução n8n de custo zero e projeção conservadora de R$55k adicionais.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Case técnico</span>
+          <span class="doc-date">Mai/26</span>
+        </div>
+        <div class="doc-title">Case: Otimização de Margem via Inteligência de Preços</div>
+        <div class="doc-body">Classificação ABC de 2.800 produtos, estratégia KVI vs. cauda longa, script Python e simulação de R$290k/ano em margem adicional.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Documentação de dados</span>
+          <span class="doc-date">Mai/26</span>
+        </div>
+        <div class="doc-title">Projeto Resgate de Receita — CRM Automático</div>
+        <div class="doc-body">Investigação SQL em 3 fases, arquitetura n8n completa, matriz de ROI com 2 cenários e análise de riscos com mitigações documentadas.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-top">
+          <span class="doc-type">Especificação técnica</span>
+          <span class="doc-date">Mai/26</span>
+        </div>
+        <div class="doc-title">Especificação: Pipeline Python + Dashboard de Performance</div>
+        <div class="doc-body">Pipeline SQL → Python homologado com 99,86% de assertividade. Gera PDF executivo e dashboard HTML interativo com Plotly e Tailwind CSS.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETENCIAS -->
+  <section class="section" id="competencias">
+    <div class="section-header">
+      <span class="section-number">06</span>
+      <h2 class="section-title">Competências demonstradas</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-block">
+        <div class="skill-category">Análise de Dados</div>
+        <div class="skill-item"><span class="skill-dot"></span>Python (Pandas, NumPy, Scikit-learn)</div>
+        <div class="skill-item"><span class="skill-dot"></span>SQL Server — queries avançadas</div>
+        <div class="skill-item"><span class="skill-dot"></span>Chaves compostas e auditoria de joins</div>
+        <div class="skill-item"><span class="skill-dot"></span>Classificação ABC e segmentação</div>
+        <div class="skill-item"><span class="skill-dot"></span>Machine Learning (regressão linear)</div>
+        <div class="skill-item"><span class="skill-dot"></span>Homologação contábil de pipelines</div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-category">Visualização e BI</div>
+        <div class="skill-item"><span class="skill-dot"></span>Dashboards HTML (Plotly + Tailwind)</div>
+        <div class="skill-item"><span class="skill-dot"></span>Relatórios executivos em PDF</div>
+        <div class="skill-item"><span class="skill-dot"></span>Google Sheets como banco de controle</div>
+        <div class="skill-item"><span class="skill-dot"></span>KPIs financeiros e análise YoY</div>
+        <div class="skill-item"><span class="skill-dot"></span>Modelagem de cenários e ROI</div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-category">Automação e Tecnologia</div>
+        <div class="skill-item"><span class="skill-dot"></span>n8n — arquitetura de workflows</div>
+        <div class="skill-item"><span class="skill-dot"></span>Integração WhatsApp + Sheets</div>
+        <div class="skill-item"><span class="skill-dot"></span>Antiduplicidade e controle de log</div>
+        <div class="skill-item"><span class="skill-dot"></span>Docker (hospedagem local)</div>
+        <div class="skill-item"><span class="skill-dot"></span>Web scraping com BeautifulSoup</div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-category">Gestão Comercial</div>
+        <div class="skill-item"><span class="skill-dot"></span>Liderança de equipes de varejo</div>
+        <div class="skill-item"><span class="skill-dot"></span>Política de preços e descontos</div>
+        <div class="skill-item"><span class="skill-dot"></span>Funil de vendas e pós-venda</div>
+        <div class="skill-item"><span class="skill-dot"></span>Estratégia de precificação psicológica</div>
+        <div class="skill-item"><span class="skill-dot"></span>Comissionamento orientado a margem</div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-category">Diagnóstico Financeiro</div>
+        <div class="skill-item"><span class="skill-dot"></span>Análise de CMV e markup</div>
+        <div class="skill-item"><span class="skill-dot"></span>Ponto de equilíbrio operacional</div>
+        <div class="skill-item"><span class="skill-dot"></span>DRE e estrutura de despesas</div>
+        <div class="skill-item"><span class="skill-dot"></span>Modelagem de elasticidade-preço</div>
+        <div class="skill-item"><span class="skill-dot"></span>Análise de receita reprimida</div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-category">Comunicação e Gestão</div>
+        <div class="skill-item"><span class="skill-dot"></span>Relatórios executivos formais</div>
+        <div class="skill-item"><span class="skill-dot"></span>Apresentações para diretoria</div>
+        <div class="skill-item"><span class="skill-dot"></span>Atas e documentação de reuniões</div>
+        <div class="skill-item"><span class="skill-dot"></span>Propostas técnicas com ROI</div>
+        <div class="skill-item"><span class="skill-dot"></span>Planejamento anual estruturado</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NARRATIVA -->
+  <section class="section" id="narrativa">
+    <div class="section-header">
+      <span class="section-number">07</span>
+      <h2 class="section-title">Narrativa de carreira</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="narrative">
+      <p>
+        Em fevereiro de 2026, Roger assumiu a gerência comercial de uma operação de varejo com faturamento acima de R$800k/mês e uma característica crítica: <strong>a empresa vendia muito e lucrativa pouco</strong>. Ninguém sabia exatamente o porquê. Os relatórios nativos do ERP mostravam faturamento bruto — e só.
+      </p>
+      <p>
+        Na segunda semana de gestão, sem pedir permissão ou esperar orientação, produziu uma análise financeira completa de 3 anos de dados. O diagnóstico foi preciso: CMV entre 60-70%, despesa fixa em 33% do faturamento, margem líquida real de ~2%, ponto de equilíbrio de R$800k/mês. <strong>A empresa operava no limite — e a diretoria não sabia disso com clareza.</strong>
+      </p>
+      <p>
+        Nos 4 meses seguintes, entregou crescimento de dois dígitos consistente, elevou o ticket médio em 17%, implantou política de fretes, conduziu reuniões mensais com pauta e ata, criou planejamento de marketing para o ano inteiro e começou a construir, em paralelo, infraestrutura de dados que a empresa não possuía — scripts Python, pipelines de limpeza de dados, dashboards interativos.
+      </p>
+      <p>
+        Em maio, a investigação chegou ao nível mais profundo: auditoria direta no SQL Server que encontrou <strong>R$550.460,08 em receita simplesmente perdida</strong> — orçamentos emitidos, clientes que vieram à loja, mas nenhum follow-up. A solução foi projetada, programada e documentada em 2 dias, com custo de implementação de R$254,54 e ROI de 17.975% no primeiro mês.
+      </p>
+      <p>
+        A proposta foi entregue formalmente à diretoria. Como as anteriores — política de margem, estoque mínimo, mix de produtos, gestão de marketing — <strong>ficou sem resposta.</strong>
+      </p>
+      <p>
+        Este portfólio é o registro desse trabalho. Cada documento tem data, assinatura e dados verificáveis. O que está documentado aqui não é promessa — <strong>é histórico.</strong>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-name">Roger Germano de Jesus</div>
+  <div class="footer-role">Gerente Comercial · Analista de Dados em Formação (EBAC) · Cidreira, RS</div>
+  <div class="footer-contacts">
+    <a class="footer-contact" href="mailto:rogergj@gmail.com">✉ rogergj@gmail.com</a>
+    <a class="footer-contact" href="https://linkedin.com/in/roger-germano" target="_blank">LinkedIn</a>
+    <span style="font-size:13px; color:var(--ink-faint);">Portfólio gerado em junho de 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
