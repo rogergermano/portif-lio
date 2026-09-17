@@ -2,7 +2,7 @@
 
 Bem-vindo ao repositório do meu portfólio profissional! Este projeto reúne casos práticos de impacto financeiro, automação de processos e engenharia de dados aplicados à resolução de gargalos operacionais e de vendas.
 
-🌐 **Acesse o portfólio online:** https://github.com/rogergermano/portif-lio
+🌐 **Acesse o portfólio online:** https://rogergermano.github.io/portif-lio/
 
 ---
 
